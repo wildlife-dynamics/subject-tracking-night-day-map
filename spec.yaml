@@ -1,6 +1,6 @@
-id: subject_day_night_location_map
+id: subject_tracking_night_day_map
 metadata:
-  name: Subject Day Night Map
+  name: Subject Tracking Night Day Map
   description: >-
     Maps the movement tracks of every subject in an EarthRanger subject group, colouring each
     track segment by whether it was travelled by day or by night. Night is worked out from the
@@ -33,8 +33,8 @@ metadata:
       indicators:
         - name: Day and night movement
   license: BSD-3-Clause
-  repository: https://github.com/wildlife-dynamics/subject-night-day-map
-  documentation: https://github.com/wildlife-dynamics/subject-night-day-map#readme
+  repository: https://github.com/wildlife-dynamics/subject-tracking-night-day-map
+  documentation: https://github.com/wildlife-dynamics/subject-tracking-night-day-map#readme
   readme: README.md
   keywords: [movement, day-night, nocturnal, tracks, trajectories, sun-position, earthranger]
   thumbnail: resources/thumbnail.png

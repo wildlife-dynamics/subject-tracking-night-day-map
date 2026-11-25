@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>subject-day-night-map</title>
+  <title>subject-tracking-night-day-map</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.6; }
     h1 { font-size: 2em; border-bottom: 2px solid #2d6a4f; padding-bottom: 10px; color: #2d6a4f; }
@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<h1 id="subject-day-night-map">subject-day-night-map</h1>
+<h1 id="subject-tracking-night-day-map">subject-tracking-night-day-map</h1>
 <p>Maps the movement tracks of every subject in an EarthRanger subject group, colouring each track segment by whether it was travelled by day (amber) or by night (navy). Night is worked out from the sun's position at each location fix, so it follows the real sunset and sunrise at that place and date.</p>
 <p>Full documentation: <a href="docs/index.html">docs/index.html</a> (User Guide, Technical Guide and Troubleshooting).</p>
 <h2 id="what-it-does">What it does</h2>
@@ -165,7 +165,7 @@
 <hr />
 <h2 id="1-load-the-workflow">1. Load the Workflow</h2>
 <p>In the workflow runner, add a new template using this repository's URL. Once added, select
-<strong>subject-day-night-map</strong> from the available templates list to load it.</p>
+<strong>subject-tracking-night-day-map</strong> from the available templates list to load it.</p>
 <hr />
 <h2 id="2-configure-the-workflow">2. Configure the Workflow</h2>
 <p>You'll be prompted to fill in the following parameters before running. Fields marked <em>Advanced</em> are collapsed
@@ -321,7 +321,7 @@ shows its dashboard when it finishes. Day segments are amber, night segments nav
 ./dev/recompile.sh --update
 
 # run the test cases in test-cases.yaml
-pixi run --manifest-path pixi.toml -e default bash dev/pytest-cli.sh subject_day_night_location_map --all
+pixi run --manifest-path pixi.toml -e default bash dev/pytest-cli.sh subject_tracking_night_day_map --all
 </code></pre>
 <p>Documentation: <a href="docs/index.html">docs/index.html</a>.</p>
 

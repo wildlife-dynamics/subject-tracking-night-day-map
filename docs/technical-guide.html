@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Technical Guide · subject-day-night-map</title>
+  <title>Technical Guide · subject-tracking-night-day-map</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="bar">
-      <a class="brand" href="index.html">subject-day-night-map</a>
+      <a class="brand" href="index.html">subject-tracking-night-day-map</a>
       <nav>
         <a href="index.html">Overview</a>
         <a href="user-guide.html">User Guide</a>
@@ -21,7 +21,7 @@
 
   <main>
     <h1>Technical Guide</h1>
-    <p class="lede">The steps subject-day-night-map runs, the packages they come from, its run-form overrides, and how to recompile and test it.</p>
+    <p class="lede">The steps subject-tracking-night-day-map runs, the packages they come from, its run-form overrides, and how to recompile and test it.</p>
 
     <h2>Steps</h2>
     <p>In the order they run. Each step is a task from one of the packages below; none are in task groups.</p>
@@ -50,17 +50,17 @@
     <p><code>classify_is_night</code> (ecoscope-platform) adds an <code>is_night</code> column to the relocations using <code>ecoscope.analysis.astronomy.is_night</code>: a fix is night when the sun is below the horizon at its coordinates and timestamp. IERS tables are not downloaded; the bundled data is accurate well beyond the minute-scale needed. Each track segment carries the flag of the fix it starts from, and <strong>Apply Color Map</strong> colours it <code>#e7a553</code> (day) or <code>#292965</code> (night).</p>
 
     <h2>Recompiling</h2>
-    <p><code>spec.yaml</code> is the source; <code>ecoscope-workflows-subject-day-night-location-map-workflow/</code> is generated from it by wt-compiler.</p>
+    <p><code>spec.yaml</code> is the source; <code>ecoscope-workflows-subject-tracking-night-day-map-workflow/</code> is generated from it by wt-compiler.</p>
     <pre><code>./dev/recompile.sh --update   # keeps the lock file and bumps VERSION.yaml
 ./dev/recompile.sh --install  # a new lock file, and the packages installed</code></pre>
 
     <h2>Testing</h2>
     <p>Each case in <code>test-cases.yaml</code> runs the workflow with its settings:</p>
-    <pre><code>pixi run --manifest-path pixi.toml -e default bash dev/pytest-cli.sh subject_day_night_location_map --all</code></pre>
+    <pre><code>pixi run --manifest-path pixi.toml -e default bash dev/pytest-cli.sh subject_tracking_night_day_map --all</code></pre>
   </main>
 
   <footer class="site-footer">
-    <p>subject-day-night-map &middot; Wildlife Dynamics</p>
+    <p>subject-tracking-night-day-map &middot; Wildlife Dynamics</p>
   </footer>
 </body>
 </html>

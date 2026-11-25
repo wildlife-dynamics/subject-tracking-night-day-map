@@ -5,8 +5,8 @@
 
 ```yaml
 # fingerprint:
-artifacts_sha256_basic: 02a9402e9e02f5c6434270ae30cd8dedffa165ce09934181ea4ac0c99ad0c14f
-artifacts_sha256_strict: ac3d4c04b156a7cf55c5c00000c39d04d90cce8c39f259a015cb7e102037a2aa
+artifacts_sha256_basic: 1c7de4e0218f29702cec60fa880665fa7a22e1e4cad0e66f2cd6e9c3ab5fc018
+artifacts_sha256_strict: d54e1d04019730548ab434d2fc1bcc3120ea32f30a5cb88fe658b8a113486d35
 installed_requirements:
 - channel: https://repo.prefix.dev/ecoscope-workflows/
   name: ecoscope-platform
@@ -18,10 +18,10 @@ installed_requirements:
   name: pydeck
   version: {version: ==0.9.2}
 params_sha256: b46c295b9564ba5ffa9ca25f0db56c765b4d1ef81d14ad950b9e603aafb1e8c9
-spec_sha256: d65b3e7cdc744a5b8d63488d72d8d6cfaa4dba86e4be9c8415d1b629a4fd91c4
+spec_sha256: 661bbaf182a197c90df1da0c3012d7b2e8f2248b16b2180373061b6878f3717b
 
 ```
 
-# ecoscope-workflows-subject-day-night-location-map-workflow
+# ecoscope-workflows-subject-tracking-night-day-map-workflow
 
 ![](graph.png)

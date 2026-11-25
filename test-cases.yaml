@@ -1,5 +1,5 @@
 designer-run:
-  name: subject-day-night-map
+  name: subject-tracking-night-day-map
   description: The values used with ▶ Run in the designer.
   params:
     time_range:

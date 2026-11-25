@@ -1,4 +1,4 @@
-# subject-day-night-map
+# subject-tracking-night-day-map
 
 Maps the movement tracks of every subject in an EarthRanger subject group, colouring each track segment by whether it was travelled by day (amber) or by night (navy). Night is worked out from the sun's position at each location fix, so it follows the real sunset and sunrise at that place and date.
 
@@ -50,7 +50,7 @@ Full documentation: [docs/index.html](docs/index.html) (User Guide, Technical Gu
 ## 1. Load the Workflow
 
 In the workflow runner, add a new template using this repository's URL. Once added, select
-**subject-day-night-map** from the available templates list to load it.
+**subject-tracking-night-day-map** from the available templates list to load it.
 
 ---
 
@@ -127,7 +127,7 @@ The run form is set in `spec.yaml`:
 ./dev/recompile.sh --update
 
 # run the test cases in test-cases.yaml
-pixi run --manifest-path pixi.toml -e default bash dev/pytest-cli.sh subject_day_night_location_map --all
+pixi run --manifest-path pixi.toml -e default bash dev/pytest-cli.sh subject_tracking_night_day_map --all
 ```
 
 Documentation: [docs/index.html](docs/index.html).
