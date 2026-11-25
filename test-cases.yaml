@@ -23,6 +23,7 @@ sample-er:
     Live run against the local Sample EarthRanger (Africa scenario): the Kruger Collars group
     (elephant, buffalo, leopard) for June 2025.
   mock_io: false
+  local_only: true
   params:
     time_range:
       since: '2025-06-01T00:00:00'

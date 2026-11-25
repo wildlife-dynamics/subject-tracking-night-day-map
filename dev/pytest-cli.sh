@@ -241,9 +241,17 @@ if [ "$run_all" = true ]; then
     # Track results
     declare -a failed_cases
     declare -a passed_cases
+    declare -a skipped_cases
 
     # Loop through each test case
     for test_case in "${test_cases[@]}"; do
+        # A test case marked `local_only: true` needs something that only exists on a developer's
+        # machine (e.g. the Sample EarthRanger on 127.0.0.1), so it is skipped in CI.
+        if [ -n "${CI:-}" ] && [ "$(yq ".\"${test_case}\".local_only // false" "$test_cases_file" | tr -d '\r')" = "true" ]; then
+            echo "- $test_case — skipped in CI (local_only)"
+            skipped_cases+=("$test_case")
+            continue
+        fi
         if run_single_test_case "$test_case"; then
             passed_cases+=("$test_case")
         else
@@ -261,6 +269,7 @@ if [ "$run_all" = true ]; then
     echo "Total: ${#test_cases[@]}"
     echo "Passed: ${#passed_cases[@]}"
     echo "Failed: ${#failed_cases[@]}"
+    echo "Skipped: ${#skipped_cases[@]}"
     echo ""
 
     if [ ${#passed_cases[@]} -gt 0 ]; then
