@@ -40,9 +40,13 @@ jobs:
         if: inputs.download-artifacts
         run: pixi clean cache --yes
 
+      # The ecoscope-web branch holds the gcp variant (wt-task-gcp, wt-runner-gcp), so pull
+      # requests into it are recompiled with --variant=gcp before comparing.
       - name: Recompile workflow
+        env:
+          VARIANT_FLAG: ${{ github.base_ref == 'ecoscope-web' && '--variant=gcp' || '' }}
         run: |
-          pixi run --manifest-path pixi.toml --locked bash -c "./dev/recompile.sh --update"
+          pixi run --manifest-path pixi.toml --locked bash -c "./dev/recompile.sh --update ${VARIANT_FLAG}"
 
       - name: Check for differences in generated files
         run: |
